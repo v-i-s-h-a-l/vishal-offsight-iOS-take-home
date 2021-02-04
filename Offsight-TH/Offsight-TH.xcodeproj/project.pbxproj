@@ -15,6 +15,7 @@
 		C986015125CC294E0043864A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986015025CC294E0043864A /* SceneDelegate.swift */; };
 		C986015425CC2C750043864A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986015325CC2C750043864A /* Endpoint.swift */; };
 		C986015825CC2E890043864A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986015725CC2E890043864A /* Utilities.swift */; };
+		C986015B25CC37080043864A /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986015A25CC37080043864A /* NetworkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C986015025CC294E0043864A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C986015325CC2C750043864A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		C986015725CC2E890043864A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		C986015A25CC37080043864A /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				C986015325CC2C750043864A /* Endpoint.swift */,
+				C986015A25CC37080043864A /* NetworkClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */,
 				C986014E25CC27E90043864A /* DummyViewController.swift in Sources */,
 				C986014825CC23EB0043864A /* Post.swift in Sources */,
+				C986015B25CC37080043864A /* NetworkClient.swift in Sources */,
 				C986015125CC294E0043864A /* SceneDelegate.swift in Sources */,
 				C986015425CC2C750043864A /* Endpoint.swift in Sources */,
 			);

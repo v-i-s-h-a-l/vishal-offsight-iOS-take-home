@@ -8,10 +8,11 @@
 import Foundation
 
 enum Endpoint {
-    case post
+    case post(page: Int, limit: Int = 10)
     
     var urlRequest: URLRequest {
         var urlRequest = URLRequest(url: self.url)
+        urlRequest.httpMethod = "GET"
         headers.forEach { (key, value) in
             urlRequest.setValue(value, forHTTPHeaderField: key)
         }
@@ -20,6 +21,7 @@ enum Endpoint {
     }
 
     private var url: URL {
+        // TODO: break this down into URL components
         let baseURL = Constant.baseURLString
         let urlString = baseURL + path
 
@@ -30,7 +32,7 @@ enum Endpoint {
     
     private var path: String {
         switch self {
-        case .post: return "/post?limit=10"
+        case .post(let page, let limit): return "/post?page=\(page)&limit=\(limit)"
         }
     }
 
