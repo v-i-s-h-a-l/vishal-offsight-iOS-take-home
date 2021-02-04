@@ -22,6 +22,8 @@
 		C986016725CC46DC0043864A /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C986016525CC46DC0043864A /* PostTableViewCell.xib */; };
 		C986016B25CC47040043864A /* PostTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986016A25CC47040043864A /* PostTableCellViewModel.swift */; };
 		C986016E25CC471C0043864A /* PostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986016D25CC471C0043864A /* PostsListViewModel.swift */; };
+		C986017525CC54FC0043864A /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986017425CC54FC0043864A /* UIStackViewExtensions.swift */; };
+		C986017825CC65CE0043864A /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986017725CC65CE0043864A /* UIImageViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		C986016525CC46DC0043864A /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		C986016A25CC47040043864A /* PostTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableCellViewModel.swift; sourceTree = "<group>"; };
 		C986016D25CC471C0043864A /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
+		C986017425CC54FC0043864A /* UIStackViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensions.swift; sourceTree = "<group>"; };
+		C986017725CC65CE0043864A /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				C986015725CC2E890043864A /* Utilities.swift */,
+				C986017425CC54FC0043864A /* UIStackViewExtensions.swift */,
+				C986017725CC65CE0043864A /* UIImageViewExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 				C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */,
 				C986014E25CC27E90043864A /* DummyViewController.swift in Sources */,
 				C986016E25CC471C0043864A /* PostsListViewModel.swift in Sources */,
+				C986017525CC54FC0043864A /* UIStackViewExtensions.swift in Sources */,
+				C986017825CC65CE0043864A /* UIImageViewExtensions.swift in Sources */,
 				C986014825CC23EB0043864A /* Post.swift in Sources */,
 				C986016025CC46410043864A /* PostsListViewController.swift in Sources */,
 				C986015B25CC37080043864A /* NetworkClient.swift in Sources */,
