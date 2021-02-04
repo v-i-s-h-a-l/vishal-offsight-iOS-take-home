@@ -17,7 +17,7 @@ protocol PostsListPresentable {
 }
 
 protocol PostsListViewDelegate: class {
-    func viewModelDidFetchPosts(viewModel: PostsListPresentable)
+    func viewModelDidFetchPosts(viewModel: PostsListPresentable, newIndexPaths: [IndexPath])
 }
 
 class PostsListViewModel: PostsListPresentable {
@@ -27,13 +27,16 @@ class PostsListViewModel: PostsListPresentable {
 
     private var subscriptions = Set<AnyCancellable>()
     private var currentPage = 0
+    private let limit = 10
 
     init() { }
 
     func fetcNextPage() {
         currentPage += 1
         let currentCount = cellViewModels.count
-        DummyAPINetworkClient().getPosts(page: currentPage)
+        let currentCellsCount = currentCount + 1 // (1 extra loading cell)
+        let newIndexPaths = (currentCellsCount..<currentCellsCount+10).map { IndexPath(row: $0, section: 0) }
+        DummyAPINetworkClient().getPosts(page: currentPage, limit: limit)
             .sink { completion in
                 switch completion {
                 // TODO: Handle error
@@ -44,7 +47,7 @@ class PostsListViewModel: PostsListPresentable {
                 let newPosts = apiData.posts
                 for (index, post) in newPosts.enumerated() {
                     self.cellViewModels.append(PostTableCellViewModel(with: post, index: index + currentCount))
-                    self.viewDelegate?.viewModelDidFetchPosts(viewModel: self)
+                    self.viewDelegate?.viewModelDidFetchPosts(viewModel: self, newIndexPaths: newIndexPaths)
                 }
             }
             .store(in: &subscriptions)

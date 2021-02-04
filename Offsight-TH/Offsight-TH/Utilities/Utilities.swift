@@ -15,6 +15,8 @@ struct Constant {
     
     static let baseURLString = "https://dummyapi.io/data/api/"
     static let dummyAPIAppID = "601c0db428eabc0fd5412f32"
+    
+    static let loadingViewTag = 123
 }
 
 enum DateHelper {

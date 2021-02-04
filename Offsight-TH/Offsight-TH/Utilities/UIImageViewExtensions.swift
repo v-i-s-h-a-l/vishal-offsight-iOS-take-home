@@ -19,11 +19,13 @@ extension UIImageView {
             self.image = image
         } else {
             self.image = placeholder
+            self.indicateLoading()
             URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
                     let cachedData = CachedURLResponse(response: response, data: data)
                     cache.storeCachedResponse(cachedData, for: request)
                     DispatchQueue.main.async {
+                        self.stopLoading()
                         self.image = image
                     }
                 }
