@@ -9,10 +9,18 @@ import Foundation
 
 enum Endpoint {
     case post
+    
+    var urlRequest: URLRequest {
+        var urlRequest = URLRequest(url: self.url)
+        headers.forEach { (key, value) in
+            urlRequest.setValue(value, forHTTPHeaderField: key)
+        }
 
-    var url: URL {
-        // TODO: move it to a constants file
-        let baseURL = "https://dummyapi.io/data/api/"
+        return urlRequest
+    }
+
+    private var url: URL {
+        let baseURL = Constant.baseURLString
         let urlString = baseURL + path
 
         guard let url = URL(string: urlString) else { fatalError("Invalid URL: \(urlString)") }
@@ -20,14 +28,13 @@ enum Endpoint {
         return url
     }
     
-    var path: String {
+    private var path: String {
         switch self {
-        case .posts: return "/post"
+        case .post: return "/post?limit=10"
         }
     }
-    
-    var header: [String: Any] {
-        // TODO: move it to a constants file
-        return ["app-id": "600e1a3c7bdbc316a88599a4"]
+
+    private var headers: [String: String] {
+        return ["app-id": Constant.dummyAPIAppID]
     }
 }
