@@ -8,7 +8,11 @@
 import Foundation
 
 struct DummyAPIData: Codable {
-    private(set) var data: [Post]
+    private(set) var posts: [Post]
+    
+    enum CodingKeys: String, CodingKey {
+        case posts = "data"
+    }
 }
 
 struct Post: Codable {
