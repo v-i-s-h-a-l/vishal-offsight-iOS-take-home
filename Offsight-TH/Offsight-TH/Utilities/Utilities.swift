@@ -16,3 +16,23 @@ struct Constant {
     static let baseURLString = "https://dummyapi.io/data/api/"
     static let dummyAPIAppID = "600e1a3c7bdbc316a88599a4"
 }
+
+enum DateHelper {
+
+    private static var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+
+        return dateFormatter
+    }()
+    
+    static func string(from date: Date) -> String {
+        return dateFormatter.string(from: date)
+    }
+    
+    static func date(from string: String?) -> Date? {
+        guard let dateString = string else { return nil }
+        return dateFormatter.date(from: dateString)
+    }
+}
