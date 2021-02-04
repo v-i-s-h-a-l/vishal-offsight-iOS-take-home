@@ -13,6 +13,7 @@
 		C986014825CC23EB0043864A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986014725CC23EB0043864A /* Post.swift */; };
 		C986014E25CC27E90043864A /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986014D25CC27E90043864A /* DummyViewController.swift */; };
 		C986015125CC294E0043864A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986015025CC294E0043864A /* SceneDelegate.swift */; };
+		C986015425CC2C750043864A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986015325CC2C750043864A /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C986014725CC23EB0043864A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C986014D25CC27E90043864A /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		C986015025CC294E0043864A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C986015325CC2C750043864A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		C986012125CC1EDB0043864A /* Offsight-TH */ = {
 			isa = PBXGroup;
 			children = (
+				C986015625CC2C890043864A /* New Group */,
 				C986014625CC23C90043864A /* Models */,
 				C986014525CC23B90043864A /* Network */,
 				C986012225CC1EDB0043864A /* AppDelegate.swift */,
@@ -71,6 +74,7 @@
 		C986014525CC23B90043864A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C986015325CC2C750043864A /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -81,6 +85,13 @@
 				C986014725CC23EB0043864A /* Post.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C986015625CC2C890043864A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 				C986014E25CC27E90043864A /* DummyViewController.swift in Sources */,
 				C986014825CC23EB0043864A /* Post.swift in Sources */,
 				C986015125CC294E0043864A /* SceneDelegate.swift in Sources */,
+				C986015425CC2C750043864A /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
