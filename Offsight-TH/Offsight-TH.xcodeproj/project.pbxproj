@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986012225CC1EDB0043864A /* AppDelegate.swift */; };
-		C986012525CC1EDB0043864A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986012425CC1EDB0043864A /* SceneDelegate.swift */; };
-		C986012725CC1EDB0043864A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986012625CC1EDB0043864A /* ViewController.swift */; };
-		C986012A25CC1EDB0043864A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C986012825CC1EDB0043864A /* Main.storyboard */; };
 		C986012C25CC1EDC0043864A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C986012B25CC1EDC0043864A /* Assets.xcassets */; };
 		C986012F25CC1EDC0043864A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C986012D25CC1EDC0043864A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +15,6 @@
 /* Begin PBXFileReference section */
 		C986011F25CC1EDB0043864A /* Offsight-TH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Offsight-TH.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C986012225CC1EDB0043864A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C986012425CC1EDB0043864A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C986012625CC1EDB0043864A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C986012925CC1EDB0043864A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C986012B25CC1EDC0043864A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C986012E25CC1EDC0043864A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C986013025CC1EDC0043864A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				C986012225CC1EDB0043864A /* AppDelegate.swift */,
-				C986012425CC1EDB0043864A /* SceneDelegate.swift */,
-				C986012625CC1EDB0043864A /* ViewController.swift */,
-				C986012825CC1EDB0043864A /* Main.storyboard */,
 				C986012B25CC1EDC0043864A /* Assets.xcassets */,
 				C986012D25CC1EDC0043864A /* LaunchScreen.storyboard */,
 				C986013025CC1EDC0043864A /* Info.plist */,
@@ -126,7 +117,6 @@
 			files = (
 				C986012F25CC1EDC0043864A /* LaunchScreen.storyboard in Resources */,
 				C986012C25CC1EDC0043864A /* Assets.xcassets in Resources */,
-				C986012A25CC1EDB0043864A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +127,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C986012725CC1EDB0043864A /* ViewController.swift in Sources */,
 				C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */,
-				C986012525CC1EDB0043864A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C986012825CC1EDB0043864A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C986012925CC1EDB0043864A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C986012D25CC1EDC0043864A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +269,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9P7CJ3Z2B8;
 				INFOPLIST_FILE = "Offsight-TH/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +277,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ind.vishal.Offsight-TH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9P7CJ3Z2B8;
 				INFOPLIST_FILE = "Offsight-TH/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ind.vishal.Offsight-TH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
