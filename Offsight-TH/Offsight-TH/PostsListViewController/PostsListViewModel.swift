@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import UIKit
 
 protocol PostsListPresentable {
     var cellViewModels: [PostTableCellPresentable] { get set }
@@ -46,10 +47,21 @@ class PostsListViewModel: PostsListPresentable {
             } receiveValue: { apiData in
                 let newPosts = apiData.posts
                 for (index, post) in newPosts.enumerated() {
-                    self.cellViewModels.append(PostTableCellViewModel(with: post, index: index + currentCount))
+                    let cellViewModel = PostTableCellViewModel(with: post, index: index + currentCount)
+                    cellViewModel.delegate = self
+                    self.cellViewModels.append(cellViewModel)
                     self.viewDelegate?.viewModelDidFetchPosts(viewModel: self, newIndexPaths: newIndexPaths)
                 }
             }
             .store(in: &subscriptions)
+    }
+}
+
+extension PostsListViewModel: PostTableCellDelegate {
+    
+    func handleDetailDisclosureTap(for link: URL?) {
+        // TODO: show alert to user
+        guard let link = link else { return }
+        UIApplication.shared.canOpenURL(link)
     }
 }

@@ -50,13 +50,14 @@ class PostTableViewCell: UITableViewCell {
         }
         postTextLabel.text = viewModel.text
         likesButton.setTitle("\(viewModel.numberOfLikes)", for: .normal)
+        likesButton.isSelected = viewModel.isLiked
         dateLabel.text = viewModel.dateText
         viewModel.tags.forEach {
-            let button = UIButton.init(type: .roundedRect)
+            let button = UIButton(type: .roundedRect)
             button.layer.borderWidth = 2
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.cornerRadius = 5
-            button.setTitle($0, for: .normal)
+            button.setTitle("  \($0)  ", for: .normal)
             button.sizeToFit()
             self.tagsStackView.addArrangedSubview(button)
         }

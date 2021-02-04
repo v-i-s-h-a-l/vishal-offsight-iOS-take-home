@@ -11,6 +11,7 @@ protocol PostTableCellPresentable: class {
     var text: String { get set }
     var imageURL: URL? { get set }
     var numberOfLikes: Int { get set }
+    var isLiked: Bool { get set }
     var detailsLink: URL? { get set }
     var tags: [String] { get set }
     var dateText: String { get set }
@@ -25,6 +26,10 @@ protocol PostTableCellViewDelegate: class {
     func updateLike(count: Int, isLiked: Bool)
 }
 
+protocol PostTableCellDelegate: class {
+    func handleDetailDisclosureTap(for link: URL?)
+}
+
 class PostTableCellViewModel: PostTableCellPresentable {
 
     var index: Int
@@ -36,8 +41,9 @@ class PostTableCellViewModel: PostTableCellPresentable {
     var dateText: String
     
     weak var viewDelegate: PostTableCellViewDelegate?
+    weak var delegate: PostTableCellDelegate?
 
-    private var isLiked = false
+    var isLiked = false
         
     init(with post: Post, index: Int) {
         self.index = index
@@ -62,5 +68,6 @@ class PostTableCellViewModel: PostTableCellPresentable {
     func handleDetailDisclosureTap() {
         // TODO: send this action to main view model
         // to handle it
+        delegate?.handleDetailDisclosureTap(for: detailsLink)
     }
 }
