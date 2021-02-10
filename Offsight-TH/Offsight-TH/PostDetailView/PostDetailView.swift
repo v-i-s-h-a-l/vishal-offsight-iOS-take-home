@@ -58,16 +58,21 @@ struct PostDetailView: View {
                                 .foregroundColor(.primary)
                                 .padding(2)
                                 .background(Theme.Col.redStart)
+                                .cornerRadius(3.0)
                         }
+                        .shadow(color: Theme.Col.shadowCasted, radius: 3.0, x: 3.0, y: 3.0)
                         HStack {
                             ForEach(viewModel.tags, id: \.self) { tag in
                                 Text(tag)
                                     .font(.footnote)
                                     .foregroundColor(.primary)
-                                    .padding()
+                                    .padding(5)
                                     .background(Theme.Col.redEnd)
+                                    .cornerRadius(3.0)
                             }
                         }
+                        .shadow(color: Theme.Col.shadowCasted, radius: 3.0, x: 3.0, y: 3.0)
+                        .padding(.bottom)
                     }
                 }
                 .padding()

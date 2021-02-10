@@ -37,6 +37,7 @@ extension AppCoordinator: PostsListDelegate {
         postDetailViewModel.delegate = self
         let swiftUIView = PostDetailView(viewModel: postDetailViewModel)
         let hostingController = UIHostingController(rootView: swiftUIView)
+        hostingController.title = "Post by \(post.owner?.firstName ?? "")"
         navigationController.pushViewController(hostingController, animated: true)
     }
 }
