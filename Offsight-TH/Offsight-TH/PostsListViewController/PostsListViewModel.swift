@@ -46,7 +46,7 @@ class PostsListViewModel: PostsListPresentable {
                 }
             } receiveValue: { apiData in
                 let newPosts = apiData.posts
-                self.cellViewModels.append(contentsOf: newPosts.map { _ in CompactPostCellViewModel() })
+                self.cellViewModels.append(contentsOf: newPosts.map { CompactPostCellViewModel(with: $0) })
                 self.viewDelegate?.viewModelDidFetchPosts(viewModel: self, newIndexPaths: newIndexPaths)
             }
             .store(in: &subscriptions)

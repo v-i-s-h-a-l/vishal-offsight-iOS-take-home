@@ -9,18 +9,29 @@ import UIKit
 
 class CompactPostTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var numberOfLikesButton: UIButton!
+    @IBOutlet weak var textPreviewLabel: UILabel!
+    @IBOutlet weak var publisherLabel: UILabel!
+    
+    fileprivate func reset() {
+        postImageView.image = nil
+        numberOfLikesButton.setTitle("0", for: .normal)
+        numberOfLikesButton.isSelected = false
+        textPreviewLabel.text = ""
+        publisherLabel.text = ""
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
     func configure(with viewModel: CompactPostCellViewModel) {
-        
+        if let url = viewModel.imageURL {
+            postImageView.load(url: url, placeholder: UIImage(systemName: "photo"))
+        } else {
+            postImageView.image = UIImage(systemName: "xmark.icloud.fill")
+        }
+        textPreviewLabel.text = viewModel.text
+        publisherLabel.text = viewModel.publisherText
+        numberOfLikesButton.setTitle("\(viewModel.numberOfLikes)", for: .normal)
+        numberOfLikesButton.isSelected = viewModel.isLiked
     }
+
 }

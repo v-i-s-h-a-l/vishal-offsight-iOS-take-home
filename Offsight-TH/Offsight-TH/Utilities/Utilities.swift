@@ -21,6 +21,12 @@ struct Constant {
 
 enum DateHelper {
 
+    private static var apiDateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = .withFractionalSeconds
+        return formatter
+    }()
+    
     private static var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -33,8 +39,8 @@ enum DateHelper {
         return dateFormatter.string(from: date)
     }
     
-    static func date(from string: String?) -> Date? {
+    static func apiDate(from string: String?) -> Date? {
         guard let dateString = string else { return nil }
-        return dateFormatter.date(from: dateString)
+        return apiDateFormatter.date(from: dateString)
     }
 }

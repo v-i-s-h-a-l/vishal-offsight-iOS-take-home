@@ -8,4 +8,19 @@
 import Foundation
 
 class CompactPostCellViewModel {
+
+    let imageURL: URL?
+    var numberOfLikes: Int = 0
+    var isLiked: Bool
+    let text: String
+    let publisherText: String
+    
+    init(with post: Post) {
+        self.imageURL = post.imageURL
+        self.numberOfLikes = post.likes ?? 0
+        self.isLiked = post.isLiked
+        self.text = post.text ?? "- -"
+        self.publisherText = "by: \(post.owner?.firstName ?? "")"
+    }
+    
 }
