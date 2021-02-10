@@ -17,10 +17,9 @@ class CompactPostCellViewModel {
     
     init(with post: Post) {
         self.imageURL = post.imageURL
-        self.numberOfLikes = post.likes ?? 0
+        self.numberOfLikes = post.likes
         self.isLiked = post.isLiked
         self.text = post.text ?? "- -"
         self.publisherText = "by: \(post.owner?.firstName ?? "")"
     }
-    
 }

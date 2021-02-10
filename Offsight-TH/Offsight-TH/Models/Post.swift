@@ -25,7 +25,7 @@ struct Post: Codable, Identifiable {
     // not keeping private(set) for likes
     // as we are locally updating the value
     // and not using network calls for this
-    var likes: Int?
+    var likes: Int
     var isLiked: Bool = false
 
     private(set) var linkURL: URL?
@@ -61,10 +61,20 @@ struct Post: Codable, Identifiable {
 
         owner = try container.decodeIfPresent(User.self, forKey: .owner)
     }
-    
+
+    mutating func updateIsLiked(to updatedIsLiked: Bool) {
+        self.isLiked = updatedIsLiked
+        if self.isLiked {
+            likes += 1
+        } else {
+            likes -= 1
+        }
+    }
+
     private init() {
         text = "This is a dummy text."
         owner = User(id: nil, firstName: "First", lastName: "Last", picture: nil, location: Location(state: "New Delhi", country: "India"))
+        likes = 5
         publishDate = Date()
         tags = [1..<5].map { "Duumy \($0)" }
     }

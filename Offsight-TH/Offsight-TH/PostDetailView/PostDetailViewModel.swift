@@ -7,6 +7,12 @@
 
 import Foundation
 
+protocol PostDetailDelegate: class {
+
+    func handleDetailTap(forPostId: UUID)
+    func handleLikeTap(forPostId: UUID, updatedIsLiked: Bool)
+}
+
 class PostDetailsViewModel: ObservableObject, Identifiable {
 
     let id: UUID
@@ -20,10 +26,12 @@ class PostDetailsViewModel: ObservableObject, Identifiable {
     let publisherInfo: String
     let publishDateText: String
     
+    var delegate: PostDetailDelegate?
+    
     init(with post: Post) {
         self.id = post.id
         self.imageURL = post.imageURL
-        self.numberOfLikes = post.likes ?? 0
+        self.numberOfLikes = post.likes
         self.isLiked = post.isLiked
         self.linkURL = post.linkURL
         self.text = post.text ?? ""
@@ -34,5 +42,14 @@ class PostDetailsViewModel: ObservableObject, Identifiable {
         } else {
             publishDateText = ""
         }
+    }
+
+    func onDetailTap() {
+        delegate?.handleDetailTap(forPostId: id)
+    }
+
+    func onLikeButtonTap() {
+        self.isLiked.toggle()
+        delegate?.handleLikeTap(forPostId: id, updatedIsLiked: self.isLiked)
     }
 }

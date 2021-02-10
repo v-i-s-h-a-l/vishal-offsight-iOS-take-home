@@ -19,7 +19,7 @@ protocol PostsListPresentable {
 }
 
 protocol PostsListViewDelegate: class {
-    func viewModelDidFetchPosts(viewModel: PostsListPresentable)
+    func reloadData()
 }
 
 protocol PostsListDelegate: class {
@@ -38,6 +38,8 @@ class PostsListViewModel: PostsListPresentable {
     private var currentPage = 1
     private let limit = 10
 
+    var onViewWillAppear = {}
+    
     init() { }
 
     func fetcNextPage() {
@@ -57,12 +59,19 @@ class PostsListViewModel: PostsListPresentable {
                 let newPosts = apiData.posts
                 self.posts.append(contentsOf: newPosts)
                 self.cellViewModels.append(contentsOf: newPosts.map { CompactPostCellViewModel(with: $0) })
-                self.viewDelegate?.viewModelDidFetchPosts(viewModel: self)
+                self.viewDelegate?.reloadData()
             }
             .store(in: &subscriptions)
     }
 
     func handleRowTap(at index: Int) {
         delegate?.showDetails(for: posts[index])
+    }
+
+    func updateLikeStatus(for postID: UUID, updateIsLiked: Bool) {
+        if let index = posts.firstIndex(where: { $0.id == postID }) {
+            posts[index].updateIsLiked(to: false)
+        }
+        onViewWillAppear = { self.viewDelegate?.reloadData() }
     }
 }

@@ -75,7 +75,8 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
 }
 
 extension PostsListViewController: PostsListViewDelegate {
-    func viewModelDidFetchPosts(viewModel: PostsListPresentable) {
+
+    func reloadData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
