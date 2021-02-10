@@ -9,7 +9,7 @@ import Foundation
 
 protocol PostDetailDelegate: class {
 
-    func handleDetailTap(forPostId: UUID)
+    func handleDetailTap(for link: URL)
     func handleLikeTap(forPostId: UUID, updatedIsLiked: Bool)
 }
 
@@ -45,7 +45,8 @@ class PostDetailsViewModel: ObservableObject, Identifiable {
     }
 
     func onDetailTap() {
-        delegate?.handleDetailTap(forPostId: id)
+        guard let linkURL = linkURL else { return }
+        delegate?.handleDetailTap(for: linkURL)
     }
 
     func onLikeButtonTap() {

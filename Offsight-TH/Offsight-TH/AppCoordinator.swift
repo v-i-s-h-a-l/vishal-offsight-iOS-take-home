@@ -33,7 +33,9 @@ class AppCoordinator {
 extension AppCoordinator: PostsListDelegate {
 
     func showDetails(for post: Post) {
-        let swiftUIView = PostDetailView(viewModel: PostDetailsViewModel(with: post))
+        let postDetailViewModel = PostDetailsViewModel(with: post)
+        postDetailViewModel.delegate = self
+        let swiftUIView = PostDetailView(viewModel: postDetailViewModel)
         let hostingController = UIHostingController(rootView: swiftUIView)
         navigationController.pushViewController(hostingController, animated: true)
     }
@@ -41,8 +43,9 @@ extension AppCoordinator: PostsListDelegate {
 
 extension AppCoordinator: PostDetailDelegate {
 
-    func handleDetailTap(forPostId: UUID) {
-        // TODO: push safari vc
+    func handleDetailTap(for link: URL) {
+        let safariVC = SFSafariViewController(url: link)
+        navigationController.present(safariVC, animated: true, completion: nil)
     }
     
     func handleLikeTap(forPostId: UUID, updatedIsLiked: Bool) {

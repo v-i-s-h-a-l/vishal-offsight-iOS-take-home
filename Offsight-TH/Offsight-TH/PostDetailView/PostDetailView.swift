@@ -30,6 +30,12 @@ struct PostDetailView: View {
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .padding(.bottom)
                     }
+                    HStack {
+                        LikesButton(numberOfLikes: viewModel.numberOfLikes, isLiked: viewModel.isLiked, action: viewModel.onLikeButtonTap)
+                        if viewModel.linkURL != nil {
+                            OpenLinkButton(action: viewModel.onDetailTap)
+                        }
+                    }
                 }
                 .padding()
             }

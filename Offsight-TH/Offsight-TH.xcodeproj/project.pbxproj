@@ -15,6 +15,8 @@
 		C941DFB125D48C3B005D892E /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941DFB025D48C3B005D892E /* PostDetailViewModel.swift */; };
 		C941DFB425D48E5D005D892E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941DFB325D48E5D005D892E /* Theme.swift */; };
 		C941DFB825D48F0F005D892E /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = C941DFB725D48F0F005D892E /* URLImage */; };
+		C941DFBE25D4970A005D892E /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941DFBD25D4970A005D892E /* LikeButton.swift */; };
+		C941DFC125D49A63005D892E /* OpenLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941DFC025D49A63005D892E /* OpenLinkButton.swift */; };
 		C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986012225CC1EDB0043864A /* AppDelegate.swift */; };
 		C986012C25CC1EDC0043864A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C986012B25CC1EDC0043864A /* Assets.xcassets */; };
 		C986012F25CC1EDC0043864A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C986012D25CC1EDC0043864A /* LaunchScreen.storyboard */; };
@@ -41,6 +43,8 @@
 		C941DFAD25D48C24005D892E /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		C941DFB025D48C3B005D892E /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
 		C941DFB325D48E5D005D892E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C941DFBD25D4970A005D892E /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		C941DFC025D49A63005D892E /* OpenLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLinkButton.swift; sourceTree = "<group>"; };
 		C986011F25CC1EDB0043864A /* Offsight-TH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Offsight-TH.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C986012225CC1EDB0043864A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C986012B25CC1EDC0043864A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		C941DFBA25D48F7C005D892E /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				C941DFBD25D4970A005D892E /* LikeButton.swift */,
+				C941DFC025D49A63005D892E /* OpenLinkButton.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -265,7 +271,9 @@
 				C986015825CC2E890043864A /* Utilities.swift in Sources */,
 				C941DFAA25D48AEB005D892E /* AppCoordinator.swift in Sources */,
 				C941DFA725D482EC005D892E /* CompactPostCellViewModel.swift in Sources */,
+				C941DFC125D49A63005D892E /* OpenLinkButton.swift in Sources */,
 				C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */,
+				C941DFBE25D4970A005D892E /* LikeButton.swift in Sources */,
 				C986017C25CC698F0043864A /* UIViewExtensions.swift in Sources */,
 				C986016E25CC471C0043864A /* PostsListViewModel.swift in Sources */,
 				C941DFA225D482CB005D892E /* CompactPostTableViewCell.swift in Sources */,
