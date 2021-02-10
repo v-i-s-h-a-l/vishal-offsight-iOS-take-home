@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SafariServices
+import SwiftUI
 import UIKit
 
 class AppCoordinator {
@@ -30,5 +32,8 @@ class AppCoordinator {
 
 extension AppCoordinator: PostsListDelegate {
     func showDetails(for post: Post) {
+        let swiftUIView = PostDetailView(viewModel: PostDetailsViewModel(with: post))
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        navigationController.pushViewController(hostingController, animated: true)
     }
 }

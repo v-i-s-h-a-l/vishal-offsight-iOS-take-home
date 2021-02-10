@@ -61,6 +61,17 @@ struct Post: Codable, Identifiable {
 
         owner = try container.decodeIfPresent(User.self, forKey: .owner)
     }
+    
+    private init() {
+        text = "This is a dummy text."
+        owner = User(id: nil, firstName: "First", lastName: "Last", picture: nil, location: Location(state: "New Delhi", country: "India"))
+        publishDate = Date()
+        tags = [1..<5].map { "Duumy \($0)" }
+    }
+
+    static func dummy() -> Post {
+        return Post()
+    }
 }
 
 struct User: Codable {
