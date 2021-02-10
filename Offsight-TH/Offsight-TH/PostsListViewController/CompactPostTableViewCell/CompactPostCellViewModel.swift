@@ -22,4 +22,13 @@ class CompactPostCellViewModel {
         self.text = post.text ?? "- -"
         self.publisherText = "by: \(post.owner?.firstName ?? "")"
     }
+
+    func updateIsLiked(to updatedIsLiked: Bool) {
+        self.isLiked = updatedIsLiked
+        if self.isLiked {
+            numberOfLikes += 1
+        } else {
+            numberOfLikes -= 1
+        }
+    }
 }

@@ -11,6 +11,7 @@ import UIKit
 
 protocol PostsListPresentable {
     var cellViewModels: [CompactPostCellViewModel] { get set }
+    var onViewWillAppear: (() -> ()) { get set }
     
     var viewDelegate: PostsListViewDelegate? { get set }
 
@@ -38,8 +39,8 @@ class PostsListViewModel: PostsListPresentable {
     private var currentPage = 1
     private let limit = 10
 
-    var onViewWillAppear = {}
-    
+    var onViewWillAppear: (() -> ()) = {}
+
     init() { }
 
     func fetcNextPage() {
@@ -65,13 +66,16 @@ class PostsListViewModel: PostsListPresentable {
     }
 
     func handleRowTap(at index: Int) {
+        onViewWillAppear = {}
         delegate?.showDetails(for: posts[index])
     }
 
     func updateLikeStatus(for postID: UUID, updateIsLiked: Bool) {
         if let index = posts.firstIndex(where: { $0.id == postID }) {
-            posts[index].updateIsLiked(to: false)
+            posts[index].updateIsLiked(to: updateIsLiked)
+            cellViewModels[index].updateIsLiked(to: updateIsLiked)
         }
+        
         onViewWillAppear = { self.viewDelegate?.reloadData() }
     }
 }

@@ -39,10 +39,16 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
         super.init(coder: coder)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        viewModel.fetcNextPage()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel.fetcNextPage()
+        viewModel.onViewWillAppear()
     }
     
     // MARK: - table view data source -

@@ -48,7 +48,7 @@ extension AppCoordinator: PostDetailDelegate {
         navigationController.present(safariVC, animated: true, completion: nil)
     }
     
-    func handleLikeTap(forPostId: UUID, updatedIsLiked: Bool) {
-        //
+    func handleLikeTap(forPostId id: UUID, updatedIsLiked: Bool) {
+        postsListViewModel.updateLikeStatus(for: id, updateIsLiked: updatedIsLiked)
     }
 }
