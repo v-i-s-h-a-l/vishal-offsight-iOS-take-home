@@ -92,10 +92,18 @@
 		C941DFAC25D48BF7005D892E /* PostDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				C941DFBA25D48F7C005D892E /* Subviews */,
 				C941DFAD25D48C24005D892E /* PostDetailView.swift */,
 				C941DFB025D48C3B005D892E /* PostDetailViewModel.swift */,
 			);
 			path = PostDetailView;
+			sourceTree = "<group>";
+		};
+		C941DFBA25D48F7C005D892E /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		C986011625CC1EDB0043864A = {
