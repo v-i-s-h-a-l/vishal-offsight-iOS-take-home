@@ -43,7 +43,7 @@ class PostsListViewModel: PostsListPresentable {
     init() { }
 
     func fetcNextPage() {
-        guard !isLoading, currentPage < 3 else { return }
+        guard !isLoading else { return }
 
         isLoading = true
         DummyAPINetworkClient().getPosts(page: currentPage, limit: limit)
