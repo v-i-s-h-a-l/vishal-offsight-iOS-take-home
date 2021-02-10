@@ -9,7 +9,7 @@ import UIKit
 
 class PostsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    private let postCellName = String(describing: PostTableViewCell.self)
+    private let postCellName = String(describing: CompactPostTableViewCell.self)
     private let loadingCellName = String(describing: LoadingIndicatorTableViewCell.self)
 
     @IBOutlet weak var tableView: UITableView! {
@@ -55,7 +55,7 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
         if indexPath.row == (viewModel?.cellViewModels.count ?? 0) {
             return tableView.dequeueReusableCell(withIdentifier: loadingCellName, for: indexPath)
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: postCellName, for: indexPath) as! PostTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: postCellName, for: indexPath) as! CompactPostTableViewCell
         cell.configure(with: viewModel.cellViewModels[indexPath.row])
 
         return cell

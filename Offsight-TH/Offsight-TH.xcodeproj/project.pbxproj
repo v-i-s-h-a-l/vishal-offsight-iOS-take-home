@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C941DFA225D482CB005D892E /* CompactPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941DFA025D482CB005D892E /* CompactPostTableViewCell.swift */; };
+		C941DFA325D482CB005D892E /* CompactPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C941DFA125D482CB005D892E /* CompactPostTableViewCell.xib */; };
+		C941DFA725D482EC005D892E /* CompactPostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941DFA625D482EC005D892E /* CompactPostCellViewModel.swift */; };
 		C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986012225CC1EDB0043864A /* AppDelegate.swift */; };
 		C986012C25CC1EDC0043864A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C986012B25CC1EDC0043864A /* Assets.xcassets */; };
 		C986012F25CC1EDC0043864A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C986012D25CC1EDC0043864A /* LaunchScreen.storyboard */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C941DFA025D482CB005D892E /* CompactPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactPostTableViewCell.swift; sourceTree = "<group>"; };
+		C941DFA125D482CB005D892E /* CompactPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompactPostTableViewCell.xib; sourceTree = "<group>"; };
+		C941DFA625D482EC005D892E /* CompactPostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactPostCellViewModel.swift; sourceTree = "<group>"; };
 		C986011F25CC1EDB0043864A /* Offsight-TH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Offsight-TH.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C986012225CC1EDB0043864A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C986012B25CC1EDC0043864A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +69,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C941DF9F25D48298005D892E /* CompactPostTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C941DFA025D482CB005D892E /* CompactPostTableViewCell.swift */,
+				C941DFA125D482CB005D892E /* CompactPostTableViewCell.xib */,
+				C941DFA625D482EC005D892E /* CompactPostCellViewModel.swift */,
+			);
+			path = CompactPostTableViewCell;
+			sourceTree = "<group>";
+		};
 		C986011625CC1EDB0043864A = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +142,7 @@
 		C986015D25CC45E70043864A /* PostsListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C941DF9F25D48298005D892E /* CompactPostTableViewCell */,
 				C986017E25CC71E00043864A /* LoadingCell */,
 				C986016325CC46B20043864A /* PostTableViewCell */,
 				C986015E25CC46410043864A /* PostsListViewController.swift */,
@@ -212,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C986016125CC46410043864A /* PostsListViewController.xib in Resources */,
+				C941DFA325D482CB005D892E /* CompactPostTableViewCell.xib in Resources */,
 				C986012F25CC1EDC0043864A /* LaunchScreen.storyboard in Resources */,
 				C986012C25CC1EDC0043864A /* Assets.xcassets in Resources */,
 				C986016725CC46DC0043864A /* PostTableViewCell.xib in Resources */,
@@ -228,9 +246,11 @@
 			files = (
 				C986015825CC2E890043864A /* Utilities.swift in Sources */,
 				C986016B25CC47040043864A /* PostTableCellViewModel.swift in Sources */,
+				C941DFA725D482EC005D892E /* CompactPostCellViewModel.swift in Sources */,
 				C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */,
 				C986017C25CC698F0043864A /* UIViewExtensions.swift in Sources */,
 				C986016E25CC471C0043864A /* PostsListViewModel.swift in Sources */,
+				C941DFA225D482CB005D892E /* CompactPostTableViewCell.swift in Sources */,
 				C986017525CC54FC0043864A /* UIStackViewExtensions.swift in Sources */,
 				C986017825CC65CE0043864A /* UIImageViewExtensions.swift in Sources */,
 				C986014825CC23EB0043864A /* Post.swift in Sources */,

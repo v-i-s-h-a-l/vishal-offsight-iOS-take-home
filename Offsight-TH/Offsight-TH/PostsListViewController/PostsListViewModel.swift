@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol PostsListPresentable {
-    var cellViewModels: [PostTableCellPresentable] { get set }
+    var cellViewModels: [CompactPostCellViewModel] { get set }
     
     var viewDelegate: PostsListViewDelegate? { get set }
 
@@ -23,7 +23,7 @@ protocol PostsListViewDelegate: class {
 
 class PostsListViewModel: PostsListPresentable {
 
-    var cellViewModels: [PostTableCellPresentable] = []
+    var cellViewModels: [CompactPostCellViewModel] = []
     weak var viewDelegate: PostsListViewDelegate?
 
     private var subscriptions = Set<AnyCancellable>()
@@ -46,22 +46,9 @@ class PostsListViewModel: PostsListPresentable {
                 }
             } receiveValue: { apiData in
                 let newPosts = apiData.posts
-                for (index, post) in newPosts.enumerated() {
-                    let cellViewModel = PostTableCellViewModel(with: post, index: index + currentCount)
-                    cellViewModel.delegate = self
-                    self.cellViewModels.append(cellViewModel)
-                    self.viewDelegate?.viewModelDidFetchPosts(viewModel: self, newIndexPaths: newIndexPaths)
-                }
+                self.cellViewModels.append(contentsOf: newPosts.map { _ in CompactPostCellViewModel() })
+                self.viewDelegate?.viewModelDidFetchPosts(viewModel: self, newIndexPaths: newIndexPaths)
             }
             .store(in: &subscriptions)
-    }
-}
-
-extension PostsListViewModel: PostTableCellDelegate {
-    
-    func handleDetailDisclosureTap(for link: URL?) {
-        // TODO: show alert to user
-        guard let link = link else { return }
-        UIApplication.shared.canOpenURL(link)
     }
 }
