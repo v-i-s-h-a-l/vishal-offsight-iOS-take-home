@@ -16,7 +16,6 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
-            tableView.allowsSelection = false
             tableView.separatorStyle = .singleLine
             tableView.tableFooterView = UIView()
             tableView.rowHeight = UITableView.automaticDimension
@@ -68,10 +67,14 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
             viewModel.fetcNextPage()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.handleRowTap(at: indexPath.row)
+    }
 }
 
 extension PostsListViewController: PostsListViewDelegate {
-    func viewModelDidFetchPosts(viewModel: PostsListPresentable, newIndexPaths: [IndexPath]) {
+    func viewModelDidFetchPosts(viewModel: PostsListPresentable) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
