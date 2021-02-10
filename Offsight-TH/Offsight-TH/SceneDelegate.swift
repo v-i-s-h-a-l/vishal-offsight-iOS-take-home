@@ -18,8 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-        window?.rootViewController = PostsListViewController(with: PostsListViewModel())
-        window?.makeKeyAndVisible()
+        
+        guard let window = window else { return }
+        window.windowScene = windowScene
+        let appCoordinator = AppCoordinator(with: window)
+        appCoordinator.start()
     }
 }

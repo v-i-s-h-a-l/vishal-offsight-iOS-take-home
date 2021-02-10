@@ -32,6 +32,7 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
         super.init(nibName: String(describing: Self.self), bundle: .main)
         
         self.viewModel.viewDelegate = self
+        self.title = "Posts"
     }
     
     required init?(coder: NSCoder) {

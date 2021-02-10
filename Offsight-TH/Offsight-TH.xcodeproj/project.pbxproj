@@ -10,6 +10,7 @@
 		C941DFA225D482CB005D892E /* CompactPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941DFA025D482CB005D892E /* CompactPostTableViewCell.swift */; };
 		C941DFA325D482CB005D892E /* CompactPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C941DFA125D482CB005D892E /* CompactPostTableViewCell.xib */; };
 		C941DFA725D482EC005D892E /* CompactPostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941DFA625D482EC005D892E /* CompactPostCellViewModel.swift */; };
+		C941DFAA25D48AEB005D892E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941DFA925D48AEB005D892E /* AppCoordinator.swift */; };
 		C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986012225CC1EDB0043864A /* AppDelegate.swift */; };
 		C986012C25CC1EDC0043864A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C986012B25CC1EDC0043864A /* Assets.xcassets */; };
 		C986012F25CC1EDC0043864A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C986012D25CC1EDC0043864A /* LaunchScreen.storyboard */; };
@@ -35,6 +36,7 @@
 		C941DFA025D482CB005D892E /* CompactPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactPostTableViewCell.swift; sourceTree = "<group>"; };
 		C941DFA125D482CB005D892E /* CompactPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompactPostTableViewCell.xib; sourceTree = "<group>"; };
 		C941DFA625D482EC005D892E /* CompactPostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactPostCellViewModel.swift; sourceTree = "<group>"; };
+		C941DFA925D48AEB005D892E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C986011F25CC1EDB0043864A /* Offsight-TH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Offsight-TH.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C986012225CC1EDB0043864A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C986012B25CC1EDC0043864A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				C986012D25CC1EDC0043864A /* LaunchScreen.storyboard */,
 				C986013025CC1EDC0043864A /* Info.plist */,
 				C986015025CC294E0043864A /* SceneDelegate.swift */,
+				C941DFA925D48AEB005D892E /* AppCoordinator.swift */,
 			);
 			path = "Offsight-TH";
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				C986015825CC2E890043864A /* Utilities.swift in Sources */,
 				C986016B25CC47040043864A /* PostTableCellViewModel.swift in Sources */,
+				C941DFAA25D48AEB005D892E /* AppCoordinator.swift in Sources */,
 				C941DFA725D482EC005D892E /* CompactPostCellViewModel.swift in Sources */,
 				C986012325CC1EDB0043864A /* AppDelegate.swift in Sources */,
 				C986017C25CC698F0043864A /* UIViewExtensions.swift in Sources */,

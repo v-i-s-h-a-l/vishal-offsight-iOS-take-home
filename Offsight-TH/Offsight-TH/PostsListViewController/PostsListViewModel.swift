@@ -30,6 +30,7 @@ class PostsListViewModel: PostsListPresentable {
 
     var cellViewModels: [CompactPostCellViewModel] = []
     weak var viewDelegate: PostsListViewDelegate?
+    var delegate: PostsListDelegate?
 
     private var posts: [Post] = []
     private var isLoading = false
@@ -59,5 +60,9 @@ class PostsListViewModel: PostsListPresentable {
                 self.viewDelegate?.viewModelDidFetchPosts(viewModel: self)
             }
             .store(in: &subscriptions)
+    }
+
+    func handleRowTap(at index: Int) {
+        delegate?.showDetails(for: posts[index])
     }
 }
