@@ -78,6 +78,12 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.handleRowTap(at: indexPath.row)
     }
+    
+//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        // TODO: test it once APIs get working
+//        guard indexPath.row < viewModel.cellViewModels.count else { return nil }
+//        return indexPath
+//    }
 }
 
 extension PostsListViewController: PostsListViewDelegate {

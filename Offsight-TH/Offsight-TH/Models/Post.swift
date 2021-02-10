@@ -76,7 +76,7 @@ struct Post: Codable, Identifiable {
         owner = User(id: nil, firstName: "First", lastName: "Last", picture: nil, location: Location(state: "New Delhi", country: "India"))
         likes = 5
         publishDate = Date()
-        tags = [1..<5].map { "Duumy \($0)" }
+        tags = ["tag 1", "tag 2", "tag3"]
     }
 
     static func dummy() -> Post {

@@ -25,6 +25,7 @@ class PostDetailsViewModel: ObservableObject, Identifiable {
     let text: String
     let publisherInfo: String
     let publishDateText: String
+    let tags: [String]
     
     var delegate: PostDetailDelegate?
     
@@ -42,6 +43,7 @@ class PostDetailsViewModel: ObservableObject, Identifiable {
         } else {
             publishDateText = ""
         }
+        self.tags = post.tags
     }
 
     func onDetailTap() {

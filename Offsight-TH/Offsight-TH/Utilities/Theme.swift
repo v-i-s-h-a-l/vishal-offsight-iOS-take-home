@@ -26,6 +26,8 @@ enum Theme {
 
         static let greenStart = Color("greenStart")
         static let greenEnd = Color("greenEnd")
+
+        static let textColor = Color("text")
     }
 }
 

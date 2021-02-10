@@ -30,7 +30,6 @@ enum DateHelper {
     private static var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .short
 
         return dateFormatter
     }()

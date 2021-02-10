@@ -66,6 +66,9 @@ class PostsListViewModel: PostsListPresentable {
     }
 
     func handleRowTap(at index: Int) {
+        guard index < cellViewModels.count else {
+            return
+        }
         onViewWillAppear = {}
         delegate?.showDetails(for: posts[index])
     }

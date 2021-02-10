@@ -36,6 +36,39 @@ struct PostDetailView: View {
                             OpenLinkButton(action: viewModel.onDetailTap)
                         }
                     }
+                    Text(viewModel.text)
+                        .font(.callout)
+                        .foregroundColor(Theme.Col.textColor)
+                        .padding(.top)
+                    HStack {
+                        Text(viewModel.publisherInfo)
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                            .padding(.vertical)
+                        Spacer()
+                        Text(viewModel.publishDateText)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .padding(.vertical)
+                    }
+                    if !viewModel.tags.isEmpty {
+                        VStack {
+                            Text("Tags")
+                                .font(.caption)
+                                .foregroundColor(.primary)
+                                .padding(2)
+                                .background(Theme.Col.redStart)
+                        }
+                        HStack {
+                            ForEach(viewModel.tags, id: \.self) { tag in
+                                Text(tag)
+                                    .font(.footnote)
+                                    .foregroundColor(.primary)
+                                    .padding()
+                                    .background(Theme.Col.redEnd)
+                            }
+                        }
+                    }
                 }
                 .padding()
             }
