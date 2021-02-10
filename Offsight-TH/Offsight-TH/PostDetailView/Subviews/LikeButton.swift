@@ -29,7 +29,7 @@ struct LikesButton: View {
                 Image(systemName: imageName)
                         .font(.body)
                         .foregroundColor(.pink)
-                Text("\(numberOfLikes + (isLiked ? 1 : 0))")
+                Text("\(numberOfLikes)")
                         .font(.body)
                         .foregroundColor(.pink)
                         .shadow(radius: 2)

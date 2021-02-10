@@ -25,6 +25,8 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     var viewModel: PostsListPresentable!
+
+    private var selectedIndexPath: IndexPath?
     
     init(with viewModel: PostsListPresentable) {
         self.viewModel = viewModel
@@ -47,8 +49,16 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         viewModel.onViewWillAppear()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if let selectedIndexPath = selectedIndexPath {
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
+        }
     }
     
     // MARK: - table view data source -
@@ -76,6 +86,7 @@ class PostsListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath
         viewModel.handleRowTap(at: indexPath.row)
     }
     

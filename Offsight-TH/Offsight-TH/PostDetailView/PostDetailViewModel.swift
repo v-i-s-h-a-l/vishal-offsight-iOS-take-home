@@ -18,7 +18,7 @@ class PostDetailsViewModel: ObservableObject, Identifiable {
     let id: UUID
 
     let imageURL: URL?
-    let numberOfLikes: Int
+    var numberOfLikes: Int
     @Published var isLiked: Bool
     let linkURL: URL?
 
@@ -54,5 +54,10 @@ class PostDetailsViewModel: ObservableObject, Identifiable {
     func onLikeButtonTap() {
         self.isLiked.toggle()
         delegate?.handleLikeTap(forPostId: id, updatedIsLiked: self.isLiked)
+        if isLiked {
+            numberOfLikes += 1
+        } else {
+            numberOfLikes -= 1
+        }
     }
 }
